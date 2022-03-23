@@ -33,7 +33,7 @@ jobs:
         pip install nbval
         pip install nbconvert
     - name: Run Security Tests
-      run: bandit
+      run: find . -name '*.ipynb' -type f -execdir bandit --execute {} \;
     - name: Execute notebooks
       run: |
         find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template classic --to html --execute {} \; 
