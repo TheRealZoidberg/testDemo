@@ -24,7 +24,7 @@ bibtex_bibfiles:
   
 launch_buttons:
   thebe                  : true
-  collab                 : true
+  colab                 : true
   
 # Information about where the book exists on the web
 repository:
