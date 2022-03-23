@@ -6,4 +6,4 @@ root: intro
 parts:
     - caption: Example Notebook
       chapters:
-          - file: notebooks/example_notebook/example_notebook.ipynb
+           - file: notebooks/example_notebook/example_notebook.ipynb
