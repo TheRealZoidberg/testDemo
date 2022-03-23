@@ -33,6 +33,7 @@ nb_output_stderr = 'show'
 numfig = True
 panels_add_bootstrap_css = False
 pygments_style = 'sphinx'
+myst_footnote_= False
 suppress_warnings = ['myst.domains']
 use_jupyterbook_latex = True
 use_multitoc_numbering = True
