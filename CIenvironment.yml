@@ -4,3 +4,5 @@ numpy
 astropy
 astroquery
 matplotlib
+bandit
+pep8
