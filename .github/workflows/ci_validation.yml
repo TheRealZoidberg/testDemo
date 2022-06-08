@@ -51,9 +51,9 @@ jobs:
     - name: Executing changed notebooks
       run: |
         for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-          echo "${{ file }} was updated, executing notebook"
+          echo "${file} was updated, executing notebook"
           run: | 
-            jupyter nbconvert --template classic --to html --execute ${{ file }}
+            jupyter nbconvert --template classic --to html --execute ${file}
         done
 
         
