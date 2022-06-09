@@ -21,11 +21,7 @@ jobs:
         with:
           files: |
             **/*.ipynb
-      - name: List all changed files
-        run: |
-          for file in ${{ steps.set-matrix.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
+          run: echo "::set-output name=matrix::${{ steps.set-matrix.outputs.all_changed_files }}
 
   notebook-execution:
     needs: gather-notebooks
