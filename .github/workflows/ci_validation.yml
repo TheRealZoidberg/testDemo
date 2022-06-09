@@ -44,4 +44,6 @@ jobs:
           pip install nbconvert
     - name: Execute notebooks
       run: |
-          jupyter nbconvert --template classic --to html --execute "${{ steps.changed-files.outputs.modified_files }}"
+          for notebook in "${{ steps.changed-files.outputs.modified_files }}"; do
+          run: |
+            jupyter nbconvert --template classic --to html --execute "$notebook"
