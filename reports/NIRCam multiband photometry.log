@@ -50,11 +50,11 @@ for filt in filters:
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mtimeout[0m                                   Traceback (most recent call last)
 Input [0;32mIn [14][0m, in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      5[0m [38;5;28mprint[39m(infile)
+[1;32m      6[0m [38;5;28mprint[39m(weightfiles[filt])
+[0;32m----> 7[0m hdu [38;5;241m=[39m [43mfits[49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[43minfile[49m[43m)[49m
 [1;32m      8[0m data [38;5;241m=[39m hdu[[38;5;241m0[39m][38;5;241m.[39mdata
 [1;32m      9[0m zp [38;5;241m=[39m hdu[[38;5;241m0[39m][38;5;241m.[39mheader[[38;5;124m'[39m[38;5;124mABMAG[39m[38;5;124m'[39m] [38;5;241m*[39m u[38;5;241m.[39mABmag  [38;5;66;03m# zeropoint[39;00m
-[0;32m---> 10[0m weight [38;5;241m=[39m [43mfits[49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[43mweightfiles[49m[43m[[49m[43mfilt[49m[43m][49m[43m)[49m[[38;5;241m0[39m][38;5;241m.[39mdata
-[1;32m     12[0m [38;5;66;03m# Measure background[39;00m
-[1;32m     13[0m bkg [38;5;241m=[39m Background2D(data, ([38;5;241m50[39m, [38;5;241m50[39m), filter_size[38;5;241m=[39m([38;5;241m3[39m, [38;5;241m3[39m), bkg_estimator[38;5;241m=[39mbkg_estimator)
 
 File [0;32m/usr/share/miniconda/lib/python3.9/site-packages/astropy/io/fits/hdu/hdulist.py:175[0m, in [0;36mfitsopen[0;34m(name, mode, memmap, save_backup, cache, lazy_load_hdus, ignore_missing_simple, **kwargs)[0m
 [1;32m    172[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m name:
