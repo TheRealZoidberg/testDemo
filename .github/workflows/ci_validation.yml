@@ -24,9 +24,10 @@ jobs:
       with:
         files: |
           **/*.ipynb
-    - name: Valdiating changed notebooks
+    - name: Valdiating changed notebooks 
       run: |
-        for file in ${{ fromJson(steps.changed-files.outputs.all_changed_files) }}; do
+        echo Outputs are: "${{ steps.changed-files.outputs }}"
+        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
           echo "$file" was updated, validating notebook
           echo ${{ steps.changed-files.outputs.all_changed_files }}
         done
