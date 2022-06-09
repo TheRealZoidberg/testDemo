@@ -26,8 +26,6 @@ jobs:
           **/*.ipynb
     - name: Valdiating changed notebooks 
       run: |
-        echo Outputs are: "${{ steps.changed-files.outputs.matrix }}"
-        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+        for file in ${{ steps.changed-files.outputs.modified_files }}; do
           echo "$file" was updated, validating notebook
-          echo ${{ steps.changed-files.outputs.all_changed_files }}
         done
