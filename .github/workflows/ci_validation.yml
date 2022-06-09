@@ -24,6 +24,9 @@ jobs:
       - name: Run changed-files with defaults
         id: changed-files
         uses: tj-actions/changed-files@v22.2
+      - name: CheckForChanges
+        run: for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          echo "$file" was changed !!!!!!!!
         
      # - id: set-matrix
       #  run: echo "::set-output name=matrix::$(find notebooks -name "*.ipynb" | jq -cnR '[inputs | select(length>0)]')"
