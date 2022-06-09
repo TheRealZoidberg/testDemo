@@ -5,7 +5,9 @@ on:
     branches:
     - main
     paths:
-      - 'notebooks/**.ipynb'
+     # - 'notebooks/**.ipynb'
+      - 'notebooks/**'
+
 env: 
   WEBBPSF_PATH: $HOME/data/webbpsf-data
 
