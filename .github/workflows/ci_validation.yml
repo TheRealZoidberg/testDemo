@@ -13,15 +13,20 @@ jobs:
   gather-notebooks:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      matrix: ${{ steps.changed-files.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v2
-      - id: set-matrix
-        uses: tj-actions/changed-files@v22.2
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          files: |
-            **/*.ipynb
-          run: echo "::set-output name=matrix::${{ steps.set-matrix.outputs.all_changed_files }}
+          submodules: true
+          fetch-depth: 0
+
+      - name: Run changed-files with defaults
+        id: changed-files
+        uses: tj-actions/changed-files@v22.2
+        
+     # - id: set-matrix
+      #  run: echo "::set-output name=matrix::$(find notebooks -name "*.ipynb" | jq -cnR '[inputs | select(length>0)]')"
 
   notebook-execution:
     needs: gather-notebooks
