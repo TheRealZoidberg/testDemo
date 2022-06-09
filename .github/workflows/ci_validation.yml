@@ -26,6 +26,7 @@ jobs:
           **/*.ipynb
     - name: Valdiating changed notebooks 
       run: |
+        echo ${{ steps.changed-files.outputs.modified_files }} was modiied woohoo
         for file in ${{ steps.changed-files.outputs.modified_files }}; do
           echo "$file" was updated, validating notebook
         done
